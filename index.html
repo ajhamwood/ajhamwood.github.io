@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <title>Aidan Hamwood | Developer Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Aidan Hamwood, portfolio, developer, webdev" />
+  <meta name="description" content="Developer portfolio of Aidan Hamwood, a webby guy based in Brisbane, Australia." />
+  <link rel="shortcut icon" href="data:image/png;base64," />
+  <link rel="stylesheet" href="css/ajh.css" />
+  <style>#construction-sign { text-align: center }</style>
+</head>
+<body>
+  <header>
+    <div id="page-title">
+      <h1>Aidan Hamwood, Developer</h1>
+      <h2>Specialising in native JS, Ruby, Node, Postgres & Docker (among others)</h2>
+    </div>
+    <canvas id="header-toy"></canvas>
+    <svg id="filters">
+      <filter id="glow">
+        <feColorMatrix in="SourceGraphic" type="matrix"	values="1 0 0 0 0.02, 0 1 0 0 0.02, 0 0 1 0 0.02, 0 0 0 1 0"/>
+      </filter>
+    </svg>
+    <div id="header-toy-toggle">graphics PAUSE</div>
+  </header>
+  <main>
+    <div id="construction-sign">Bear with me, this portfolio is still in the process of being assembled.</div>
+    <nav>
+      <div id="libs">
+        <div>Libraries</div>
+        <div class="opt-list">
+          <span class="tbc">signal-server</span>
+          <span class="tbc">speakie</span>
+        </div>
+      </div>
+      <div id="apps">
+        <div>Apps</div>
+        <div class="opt-list">
+          <span class="tbc">stl-maker</span>
+          <span class="tbc">abyme</span>
+          <span class="tbc">survey</span>
+          <span class="tbc">smooth</span>
+        </div>
+      </div>
+      <div id="games">
+        <div>Games</div>
+        <div class="opt-list">
+          <span class="tbc">diffusio</span>
+          <span>words</span>
+          <span class="tbc">2048</span>
+          <span class="tbc">snake</span>
+        </div>
+      </div>
+    </nav>
+    <div id="showcase">
+      <div id="placeholder" data-selected>
+        <div>Select a project to know more</div>
+      </div>
+      <div id="signal-server">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="speakie">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="stl-maker">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="abyme">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="survey">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="smooth">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="diffusio">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="2048">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+      <div id="words">
+        <img class="project-image" src="img/words1.png"/>
+        <div class="project-summary">
+          <p><a href="http://ajhamwood.github.io/words">WORDS</a> is a simple game of word search. Your goal is to find within 3 minutes as many English words as you can using only the 9 letters provided.</p>
+          <p>The github.io version uses a Web Worker to pre-generate word lists, running blazingly fast while weighing in at under 300 lines of code in a single file.</p>
+          <p><a href="http://github.com/ajhamwood/words">View Github project</a></p>
+        </div>
+      </div>
+      <div id="snake">
+        <img class="project-image" />
+        <div class="project-summary"></div>
+      </div>
+    </div>
+    <div id="call-to-action">
+      <div>Now available for employment!</div>
+      <div>
+        <img id="phone" src="img/phone.svg"/
+        ><img id="email" src="img/email.svg"/>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div id="footer-left">
+      <div>Aidan Hamwood</div>
+      <div>Phone:<img id="footer-phone" src="img/phonenum.svg"/></div>
+      <div>Email: <img id="footer-email" src="img/emailaddr.svg"/></div>
+      <div>Resume: <a href="#">TODO</a></div>
+    </div>
+    <div id="footer-right">
+      <div>Click me</div>
+      <canvas id="footer-toy"></canvas>
+    </div>
+  </footer>
+  <script src="js/ajh.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>
