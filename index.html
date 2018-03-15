@@ -11,7 +11,7 @@
   <style>#construction-sign { text-align: center }</style>
 </head>
 <body>
-  <header>
+  <header data-playstate="play">
     <div id="page-title">
       <h1>Aidan Hamwood, Developer</h1>
       <h2>Specialising in native JS, Ruby, Node, Postgres & Docker (among others)</h2>
@@ -22,7 +22,6 @@
         <feColorMatrix in="SourceGraphic" type="matrix"	values="1 0 0 0 0.02, 0 1 0 0 0.02, 0 0 1 0 0.02, 0 0 0 1 0"/>
       </filter>
     </svg>
-    <div id="header-toy-toggle">graphics PAUSE</div>
   </header>
   <main>
     <div id="construction-sign">Bear with me, this portfolio is still in the process of being assembled.</div>
@@ -37,17 +36,17 @@
       <div id="apps">
         <div>Apps</div>
         <div class="opt-list">
+          <span>smooth</span>
           <span class="tbc">stl-maker</span>
           <span class="tbc">abyme</span>
           <span class="tbc">survey</span>
-          <span class="tbc">smooth</span>
         </div>
       </div>
       <div id="games">
         <div>Games</div>
         <div class="opt-list">
-          <span class="tbc">diffusio</span>
           <span>words</span>
+          <span class="tbc">diffusio</span>
           <span class="tbc">2048</span>
           <span class="tbc">snake</span>
         </div>
@@ -65,6 +64,14 @@
         <img class="project-image" />
         <div class="project-summary"></div>
       </div>
+      <div id="smooth">
+        <img class="project-image" src="img/smooth.png"/>
+        <div class="project-summary">
+          <p><a href="https://ajhamwood.github.io/smooth/">SMOOTH</a> visualises Stephan Rafler's continuous domain generalisation of the famous Game of Life automaton. By carefully choosing the update rules, one can cause complex structures to emerge - such as gliders, repeaters and still-lifes.</p>
+          <p>This project features a hand-coded WebAssembly implementation of the Fast Fourier Transform, achieving approximately <a href="https://ajhamwood.github.io/smooth/fft-benchmark.html">96% speed-up over native Javascript</a>.</p>
+          <p><a href="https://github.com/ajhamwood/smooth">View Github project</a></p>
+        </div>
+      </div>
       <div id="stl-maker">
         <img class="project-image" />
         <div class="project-summary"></div>
@@ -77,9 +84,13 @@
         <img class="project-image" />
         <div class="project-summary"></div>
       </div>
-      <div id="smooth">
-        <img class="project-image" />
-        <div class="project-summary"></div>
+      <div id="words">
+        <img class="project-image" src="img/words.png"/>
+        <div class="project-summary">
+          <p><a href="http://ajhamwood.github.io/words">WORDS</a> is a simple game of word search. Your goal is to find within 3 minutes as many English words as you can using only the 9 letters provided.</p>
+          <p>The github.io version uses a Web Worker to pre-generate word lists, running blazingly fast while weighing in at under 300 lines of code in a single file.</p>
+          <p><a href="http://github.com/ajhamwood/words">View Github project</a></p>
+        </div>
       </div>
       <div id="diffusio">
         <img class="project-image" />
@@ -88,14 +99,6 @@
       <div id="2048">
         <img class="project-image" />
         <div class="project-summary"></div>
-      </div>
-      <div id="words">
-        <img class="project-image" src="img/words1.png"/>
-        <div class="project-summary">
-          <p><a href="http://ajhamwood.github.io/words">WORDS</a> is a simple game of word search. Your goal is to find within 3 minutes as many English words as you can using only the 9 letters provided.</p>
-          <p>The github.io version uses a Web Worker to pre-generate word lists, running blazingly fast while weighing in at under 300 lines of code in a single file.</p>
-          <p><a href="http://github.com/ajhamwood/words">View Github project</a></p>
-        </div>
       </div>
       <div id="snake">
         <img class="project-image" />

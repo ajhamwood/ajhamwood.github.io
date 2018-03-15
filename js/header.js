@@ -4,11 +4,11 @@ var H = (function () {
   var header = $("#header-toy")[0], hcontext = header.getContext("2d"),
       buffer1 = document.createElement("canvas"), bufcon1 = buffer1.getContext("2d"),
       buffer2 = document.createElement("canvas"), bufcon2 = buffer2.getContext("2d"),
-      vw, vh, loop, count = 0;
+      vw, vh, count = 0;
 
 // Render loop
   var H = Object.create({
-    loop, loopGen () {
+    playstate: true, loop: () => {}, loopGen () {
       bufcon2.setTransform(-1, 0, 0, 1, 0, 0);
       hcontext.fillStyle = "#000";
       return () => {
@@ -24,7 +24,7 @@ var H = (function () {
         bufcon1.drawImage(buffer2, 0, 0, hvw, vh, hvw, 0, hvw, vh);
         hcontext.resetTransform();
         hcontext.drawImage(buffer1, 0, 0, vw, vh);
-        window.requestAnimationFrame(H.loop)
+        H.playstate && requestAnimationFrame(H.loop)
       }
     }
   });
@@ -59,7 +59,7 @@ var H = (function () {
 
 // Resize refresher
   function resizeInner () {
-    $("#header-toy-toggle")[0].innerText = "graphics PAUSE";
+    H.playstate = $("header")[0].dataset.playstate == "play";
     var img1 = new Image(header.width, header.height);
     img1.src = header.toDataURL();
     var img2 = new Image(buffer1.width, buffer1.height);
@@ -75,7 +75,7 @@ var H = (function () {
       new Promise(resolve => img2.onload = () => resolve(bufcon1.drawImage(img2, 0, 0))),
       new Promise(resolve => img3.onload = () => resolve(bufcon2.drawImage(img3, 0, 0)))
     ]).then(() => first && (H.loop = H.loopGen())());
-    transform = new T(vw, vh)
+    transform = new T(vw, vh);
   }
   function resize (e) { e.stopPropagation(); resizeInner() }
   resizeInner();

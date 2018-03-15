@@ -7,7 +7,8 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center }
+  align-items: center;
+  cursor: default }
   header > #page-title {
     text-align: center }
     header > #page-title > * { margin: 1rem }
@@ -17,20 +18,8 @@ header {
     position: absolute;
     top: 0;
     z-index: -1 }
-  #header-toy-toggle {
-    position: absolute;
-    bottom: calc(40vh + 5px);
-    right: 5px;
-    cursor: pointer;
-    opacity: .3;
-    transition: opacity .2s ease-out }
-  #header-toy-toggle:hover {
-    opacity: .999;
-    transition: opacity .2s ease-out }
 svg {
-  position: absolute;
-  top: 0;
-  left: 0 }
+  position: absolute }
 
 
 main {
@@ -71,12 +60,8 @@ main {
         main .opt-list > :not(.tbc):hover {
           color: royalblue;
           cursor: pointer }
-        main .opt-list > .tbc {
-          color: lightgrey;
-          font-weight: bold }
-        main .opt-list > [data-selected] {
-          font-weight: bold;
-          padding-left: .7rem }
+        main .opt-list > .tbc { color: #bbb }
+        main .opt-list > [data-selected] { font-weight: bold }
 
   main > #showcase {}
     main > #showcase > :not([data-selected]) { display: none !important }

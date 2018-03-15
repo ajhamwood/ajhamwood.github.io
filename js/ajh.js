@@ -10,10 +10,10 @@ $.addEvents({
   "": {
     load: function () {}
   },
-  "#header-toy-toggle": {
+  "header": {
     click: function () {
-      var text = ["graphics PLAY", "graphics PAUSE"], which = text.indexOf(this.innerText);
-      this.innerText = text[1 - which];
+      var state = ["pause", "play"], which = state.indexOf(this.dataset.playstate);
+      H.playstate = this.dataset.playstate = state[1 - which];
       (H.loop = which ? () => {} : H.loopGen())()
     }
   },
