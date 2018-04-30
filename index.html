@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <title>Aidan Hamwood | Developer Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Aidan Hamwood, portfolio, developer, webdev" />
+  <meta name="description" content="Developer portfolio of Aidan Hamwood, a webby guy based in Brisbane, Australia." />
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/ajh.css">
+</head>
+<body>
+  <noscript><h6>Only viewable with JavaScript enabled.</h6></noscript>
+  <main>
+    <header>
+      <div class="logo">
+        <canvas class="logo-dynamic"></canvas>
+        <div class="filter"></div>
+        <svg id="filters">
+          <filter id="glow">
+            <feColorMatrix in="SourceGraphic" type="matrix"	values="1 0 0 0 0.02, 0 1 0 0 0.02, 0 0 1 0 0.02, 0 0 0 1 0"/>
+          </filter>
+        </svg>
+      </div>
+      <h1 class="name" data-link="lead">Aidan Hamwood</h1>
+    </header>
+    <nav>
+      <div data-link="mission">Mission</div
+      ><div data-link="featured">Featured</div
+      ><div data-link="proficiencies">Proficiencies</div
+      ><div data-link="details">Details</div>
+    </nav>
+    <article id="lead">
+      <div class="lead tagline">
+        <h1>A rare talent<br/>now seeking<br/>employment</h1>
+      </div>
+      <svg class="lead-visual">
+        <symbol id="arrow" viewBox="-5 -30 10 60">
+          <path d="M 1,-30 V 16 L 5, 15 L 0 25 L -5 15 L -1, 16 V -30 Z" stroke="#7fbdff" fill="#7fbdff" stroke-width="2"/>
+        </symbol>
+        <circle cy="0" r="5" fill="#ff4136"/>
+        <circle cy="0" fill="#fff0" stroke-width="2.5">
+          <animate attributeName="r" attributeType="XML"
+            values="0; 300" keyTimes="0; 1" dur="5s" begin="3s" repeatCount="indefinite"/>
+          <animate attributeName="stroke" attributeType="XML" values="#ff4136ff; #ff413600"
+            calcMode="spline" keySplines="0 .5 .5 1" dur="5s" begin="3s" repeatCount="indefinite"/>
+        </circle>
+        <use width="10" height="30" href="#arrow">
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" additive="sum" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" attributeType="XML" type="rotate" additive="sum"/>
+        </use>
+      </svg>
+    </article>
+    <article id="mission">
+      <span>Ready</span>
+      <div class="tagline">
+        <h1><span>Ready</span> to help <b>one great<br/>organisation</b> successfully<br/>launch digital <b>innovations</b></h1>
+      </div>
+      <svg viewBox="-25 -500 50 1000" class="rule">
+        <path d="M 0 -500 V -20 A 20 20 0 0 0 0 20 V 500" stroke="#ff4136" stroke-width="5" fill="#fff0"/>
+        <circle cx="0" cy="0" r="5" fill="#ff4136"/>
+      </svg>
+      <div class="copy">
+        <h2>Mission</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      </div>
+    </article>
+    <article id="featured">
+      <span>Ready</span>
+      <div class="tagline">
+        <h1><span>Ready</span> to use <b>human-centred</b>,<br/><b>verifiable</b> design thinking<br/>to maximise <b>impact</b></h1>
+      </div>
+      <svg viewBox="-25 -500 50 1000" class="rule">
+        <path d="M 0 -500 V -20 A 20 20 0 0 0 0 20 V 500" stroke="#ff4136" stroke-width="5" fill="#fff0"/>
+        <circle cx="0" cy="0" r="5" fill="#ff4136"/>
+      </svg>
+      <div class="copy">
+        <h2>Featured project</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      </div>
+    </article>
+    <article id="proficiencies">
+      <span>Ready</span>
+      <div class="tagline">
+        <h1><span>Ready</span> to bring <b>full-stack</b><br/>technical know-how to an<br/>existing <b>highly-skilled team</b></h1>
+      </div>
+      <svg viewBox="-25 -500 50 1000" class="rule">
+        <path d="M 0 -500 V -20 A 20 20 0 0 0 0 20 V 500" stroke="#ff4136" stroke-width="5" fill="#fff0"/>
+        <circle cx="0" cy="0" r="5" fill="#ff4136"/>
+      </svg>
+      <div class="copy">
+        <h2>Proficiencies</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      </div>
+    </article>
+    <article id="details">
+      <span>Ready</span>
+      <div class="tagline">
+        <h1><span>Ready</span> to take the <b>next step?</b></br>I'd love to hear from <b>you</b></h1>
+      </div>
+      <svg viewBox="-25 -500 50 1000" class="rule">
+        <path d="M 0 -500 V -20 A 20 20 0 1 0 .01 -20" stroke="#ff4136" stroke-width="5" fill="#fff0"/>
+        <circle cx="0" cy="0" r="5" fill="#ff4136"/>
+      </svg>
+      <div class="copy">
+        <h2>Details</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      </div>
+    </article>
+  </main>
+  <script src="/js/logo.js"></script>
+  <script src="/js/ajh.js"></script>
+</body>
+</html>
