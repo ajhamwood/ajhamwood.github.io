@@ -1,5 +1,5 @@
 html, body { margin: 0 }
-p, nav { font: large "Plantin" }
+.copy, nav { font: large "Plantin" }
 h1, h2, h3, h4, h5, h6 { font-family: "Wigrum" }
 h1 { margin: 0 }
 main {
@@ -53,7 +53,6 @@ main {
     background: #000;
     color: #fff }
   article:not(:last-of-type)::before {
-    height: 12rem;
     background: linear-gradient(180deg, #fff0 0, #ffff 75%, #ffff);
     content: "";
     position: absolute;
@@ -63,14 +62,12 @@ main {
   article:nth-of-type(2)::after { z-index: 1 }
   article:nth-last-of-type(2)::before { z-index: 2 }
   article:not(:first-of-type)::after {
-    height: 12rem;
     background: linear-gradient(0deg, #fff0 0, #ffff 75%, #ffff);
     content: "";
     position: absolute;
     top: 0;
     width: 100% }
   article:first-of-type::before {
-    height: 12rem;
     background: linear-gradient(180deg, #0000 0, #000f 75%, #000f);
     content: "";
     position: absolute;
@@ -78,7 +75,6 @@ main {
     width: 100%;
     z-index: 1 }
   article:last-of-type::after {
-    height: 12rem;
     background: linear-gradient(0deg, #0000 0, #000f 75%, #000f);
     content: "";
     position: absolute;
@@ -120,6 +116,9 @@ main {
     .copy {
       left: calc(60vw + 2rem);
       width: calc(35vw - 2rem) }
+      .hidden {
+        color: #ffa09b;
+        cursor: pointer }
 @media (max-width: 78rem) {
   .tagline, article > span { left: 3rem }
   .lead.tagline {
@@ -128,7 +127,7 @@ main {
     top: auto;
     left: 3rem;
     z-index: 2 } }
-@media (max-width: 62rem) {
+@media (min-height: 43rem) and (max-width: 62rem), (max-height: 43rem) and (max-width: 53rem) {
   article:last-of-type h1 > span { color: #fff0 }
   article:nth-last-of-type(2)::before { z-index: 1 }
   .tagline, article > span {
@@ -138,8 +137,15 @@ main {
     display: block !important }
   .copy {
     left: calc(5vh + 4rem);
-    width: calc(100vw - 5vh - 6rem) }
+    width: calc(100vw - 5vh - 6rem);
+    transform: none;
+    top: 20rem }
   .rule { left: 2rem } }
+@media (max-height: 43rem) and (min-width: 53rem) and (max-width: 78rem) {
+  h2 {
+    font-size: medium;
+    margin-bottom: -.5rem }
+  .copy { font-size: x-small } }
 @media (max-width: 47rem) {
   nav {
     top: 5rem;
@@ -148,11 +154,14 @@ main {
     margin-top: -1rem;
     width: 100vw;
     transition: opacity .5s ease-in-out }
-  .tagline, article > span { top: 12rem }
-  .copy {
-    transform: none;
-    top: 20rem } }
-@media (max-width: 35rem) {
+  .tagline, article > span { top: 12rem } }
+@media (max-height: 43rem) and (min-width: 47rem) and (max-width: 53rem) {
+  article::before, article::after { height: 7rem !important }
+  .tagline, article > span { top: 6.5rem !important }
+  .copy { top: 11rem !important } }
+@media (min-width: 35rem), (max-height: 43rem) and (min-width: 53rem) {
+  article::before, article::after { height: 12rem } }
+@media (max-width: 35rem), (max-height: 43rem) and (max-width: 53rem) {
   header {
     height: 3rem;
     padding: 1rem;
@@ -171,7 +180,7 @@ main {
       font-size: small;
       padding: 0 .5rem;
       line-height: 2rem }
-  article::before, article::after { height: 8rem !important }
+  article::before, article::after { height: 8rem }
   .lead.tagline {
     left: 2rem;
     bottom: 2rem;
@@ -189,8 +198,15 @@ main {
   .copy {
     top: 13rem;
     left: calc(5vh + 1rem);
-    width: calc(100vw - 5vh - 3rem) }
+    width: calc(100vw - 5vh - 3rem);
+    font-size: x-small }
     h2 {
       font-size: medium;
-      margin-bottom: -.5rem }
-    .copy > p { font-size: x-small } }
+      margin-bottom: -.5rem } }
+@media (max-height: 33rem) and (min-width: 35rem) {
+  .lead.tagline {
+    left: 2rem;
+    bottom: 2rem;
+    width: 12rem }
+  .lead > h1 { font-size: 2rem } }
+@media (max-height: 43rem) and (min-width: 35rem) {}

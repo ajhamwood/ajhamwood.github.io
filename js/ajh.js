@@ -81,27 +81,25 @@ let machine = new $.Machine({
   },
   headerKeyframe: null
 }).on('scroll', function (offset) {
-  let val, { height } = this.screen;
+  let val, { width, height } = this.screen;
   this.screen.index = Math.floor(offset / height);
   this.screen.offset = offset % height;
-  if (machine.getState().screen.width >= rem(35)) {
+  if (width >= rem(35)) {
     if (offset < height - rem(16)) val = 1;
     else if (offset < height) val = (height - offset) / rem(16);
     else val = 0;
     val == this.headerKeyframe || redrawHeader(offset, this.headerKeyframe = val)
   };
 }).on('resize', function (screenHeight, screenWidth) {
-  let val, scroll = this.screen.index * this.screen.height + this.screen.offset,
+  let val, scroll, offset = this.screen.offset * screenHeight / this.screen.height,
       height = this.screen.height = screenHeight,
       width = this.screen.width = screenWidth;
-  this.screen.index = Math.floor(scroll / height);
-  this.screen.offset = scroll % height;
-  if (machine.getState().screen.width >= rem(35)) {
-    if (scroll < height - rem(16)) val = 1;
-    else if (scroll < height) val = (height - scroll) / rem(16);
-    else val = 0;
-    redrawHeader(scroll, this.headerKeyframe = val);
-  }
+  scrollTo(0, scroll = height * this.screen.index + (this.screen.offset = offset));
+  if (width < rem(35) || (height < rem(33))) val = 0;
+  else if (scroll < height - rem(16)) val = 1;
+  else if (scroll < height) val = (height - scroll) / rem(16);
+  else val = 0;
+  redrawHeader(scroll, this.headerKeyframe = val);
   redrawLeadVisual()
 });
 
@@ -125,5 +123,7 @@ $.addEvents({
     click: function () {
       document.getElementById(this.dataset.link).scrollIntoView()
     }
-  }
+  },
+  ".phone-number": { click: function () { this.innerText = '0422 8' + '11 274' } },
+  ".email": { click: function () { this.innerText = 'ajh@' + 'tuta.io' } }
 })
