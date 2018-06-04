@@ -106,7 +106,7 @@ main {
         article h1 > span {
           color: #fff0;
           font-weight: bold }
-        article:last-of-type h1 > span { color: #ff4136 }
+        article:last-child h1 > span { color: #ff4136 }
         article:last-child > span { display: none }
     .rule {
       position: relative;
@@ -116,9 +116,8 @@ main {
     .copy {
       left: calc(60vw + 2rem);
       width: calc(35vw - 2rem) }
-      .hidden {
-        color: #ffa09b;
-        cursor: pointer }
+      .hidden { color: #ffa09b }
+      .hidden.display { cursor: pointer }
 @media (max-width: 78rem) {
   .tagline, article > span { left: 3rem }
   .lead.tagline {
@@ -146,7 +145,7 @@ main {
     font-size: medium;
     margin-bottom: -.5rem }
   .copy { font-size: x-small } }
-@media (min-height: 43rem) and  (max-width: 47rem), (max-height: 43rem) and (max-width: 38rem) {
+@media (min-height: 43rem) and (max-width: 47rem), (max-height: 43rem) and (max-width: 38rem) {
   nav {
     top: 5rem;
     left: 0;
@@ -155,7 +154,7 @@ main {
     width: 100vw;
     transition: opacity .5s ease-in-out }
   .tagline, article > span { top: 12rem } }
-@media (max-height: 43rem) and (min-width: 47rem) and (max-width: 57rem) {
+@media (max-height: 43rem) and (min-width: 38rem) and (max-width: 57rem) {
   article::before, article::after { height: 7rem !important }
   .tagline:not(.lead), article > span { top: 6.5rem !important }
   .copy { top: 11rem !important } }

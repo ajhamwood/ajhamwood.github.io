@@ -1,9 +1,12 @@
 // Utilities
+
 function $ (sel, node) { return Array.prototype.slice.call( (node || document).querySelectorAll(sel) ) }
+
 $.addEvents = function (obj, node) {
   for (var q in obj) for (var e in obj[q])
     for (var ns = q ? $(q, node) : [window, document], es = e.split(' '), i = 0; i < es.length; i++)
       typeof ns === 'undefined' || ns.forEach(n => n.addEventListener(es[i], obj[q][e].bind(n))) };
+
 $.Machine = function (s) {
   let events = [], state = Object.seal(s);
   return Object.assign(this, {
@@ -12,9 +15,13 @@ $.Machine = function (s) {
     emit (event, ...args) { return events[event] && events[event].reduce((s, fn) => (fn.apply(s, args), s), state) },
     stop (event, fname = '') { events[event] && events[event].splice(events[event].findIndex(fn => fn.name == fname), 1); return this } }) };
 
+
 // Page functions
+
 function rem (val) { return val * parseFloat(getComputedStyle(document.documentElement).fontSize) }
+
 function lerp (a, b, t) { return t * a + (1 - t) * b }
+
 function redrawHeader (offset, val) {
   let header = $('header')[0], headerlogo = $('header > .logo')[0], headername = $('header > .name')[0], nav = $('nav')[0],
       { height, width } = machine.getState().screen, remWidth = width / rem(1);
@@ -29,6 +36,7 @@ function redrawHeader (offset, val) {
   nav.style.opacity = remWidth < 47 ? Math.floor(1 - val) : 1 - val;
   nav.style.zIndex = Math.ceil(1 - val)
 }
+
 function redrawLeadVisual () {
   let { width, height } = machine.getState().screen,
       use = $('.lead-visual')[0].removeChild($('.lead-visual > use')[0]),
@@ -58,10 +66,23 @@ function redrawLeadVisual () {
   }
 }
 
+function replaceLink (scope, val, protocol) {
+  let link = document.createElement('a'),
+      valNoSpace = val.replace(/ /, '');
+  link.setAttribute('href', protocol ? protocol + ':' + valNoSpace : valNoSpace);
+  link.setAttribute('class', 'hidden');
+  link.textContent = val;
+  scope.parentNode.replaceChild(link, scope)
+}
+
+
 // Logo init
+
 Logo().then(obj => ((Logo = obj).loop = Logo.loopGen())());
 
-// Machine setup
+
+// Page state
+
 let machine = new $.Machine({
       screen: {
         index: Math.floor(window.scrollY / window.innerHeight),
@@ -99,7 +120,9 @@ let machine = new $.Machine({
       resizeFlag && ((screenWidth < rem(35) || screenHeight < rem(33)) ? Logo.resize(rem(5), rem(3)) : Logo.resize(rem(40/3), rem(8)))
     });
 
-// Events
+
+// UI Events
+
 $.addEvents({
   "": {
     load: function () {
@@ -120,6 +143,13 @@ $.addEvents({
       document.getElementById(this.dataset.link).scrollIntoView()
     }
   },
-  ".phone-number": { click: function () { this.innerText = '0422 8' + '11 274' } },
-  ".email": { click: function () { this.innerText = 'ajh@' + 'tuta.io' } }
+  ".display": {
+    click: function () {
+      this.remove();
+      replaceLink($('.phone-number')[0], '0422 8' + '11 274', 'tel');
+      replaceLink($('.email')[0], 'ajh@t' + 'uta.io', 'mailto');
+      replaceLink($('.linkedin')[0], 'https://www.linkedin.com/in/aidan-ha' + 'mwood-b12051166');
+      replaceLink($('.resume')[0], 'https://ajhamwood.github.io/resume.pdf')
+    }
+  }
 })
