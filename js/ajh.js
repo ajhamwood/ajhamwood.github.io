@@ -149,7 +149,7 @@ $.addEvents({
       replaceLink($('.phone-number')[0], '0422 8' + '11 274', 'tel');
       replaceLink($('.email')[0], 'ajh@t' + 'uta.io', 'mailto');
       replaceLink($('.linkedin')[0], 'https://www.linkedin.com/in/aidan-ha' + 'mwood-b12051166');
-      replaceLink($('.resume')[0], 'https://ajhamwood.github.io/resume.pdf')
+      replaceLink($('.resume')[0], 'https://ajhamwood.github.io/ResumeOfAidanHamwood.pdf')
     }
   }
 })
