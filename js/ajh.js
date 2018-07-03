@@ -127,7 +127,8 @@ $.addEvents({
   "": {
     load: function () {
       machine.emit('scroll', window.scrollY);
-      machine.emit('resize', window.innerHeight, window.innerWidth)
+      machine.emit('resize', window.innerHeight, window.innerWidth);
+      fetch('https://diarie.herokuapp.com/ping', { mode: 'no-cors'} )
     },
     scroll: function (e) {
       e.stopPropagation();
