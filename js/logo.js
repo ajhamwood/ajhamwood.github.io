@@ -10,7 +10,6 @@ var Logo = function () {
         resize, loop, loopGen () {
           let frameTiming = 1000/15;
           bufcon2.setTransform(-1, 0, 0, 1, 0, 0);
-          logocon.fillStyle = "#000";
           return () => {
             performance.mark('startloop');
 
@@ -21,15 +20,19 @@ var Logo = function () {
             transform.rotate(-count*speed, centre*vw, vh/2);
 
             let hvw = Math.floor(vw/2);
+            logocon.fillStyle = "#000";
             logocon.fillRect(0, 0, vw, vh);
             logocon.transform.apply(logocon, transform.get());
-            logocon.filter = "url(#glow)";
+
             logocon.drawImage(buffer1, 0, 0, vw, vh);
-            logocon.filter = "none";
+            logocon.fillStyle = "#fff1";
+            logocon.fillRect(0, 0, vw, vh);
+
             bufcon1.drawImage(logo, 0, 0, hvw, vh, 0, 0, hvw, vh);
             bufcon2.drawImage(logo, 0, 0, hvw, vh, 0, 0, -hvw, vh);
             bufcon1.drawImage(buffer2, 0, 0, hvw, vh, hvw, 0, hvw, vh);
             logocon.resetTransform();
+
             logocon.drawImage(buffer1, 0, 0, vw, vh);
             performance.mark('endloop');
             performance.measure('looptime', 'startloop', 'endloop');

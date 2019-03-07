@@ -48,6 +48,7 @@ main {
     flex-flow: row wrap;
     align-content: flex-start;
     clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
     position: relative }
   article:first-of-type, article:last-of-type {
     background: #000;
@@ -93,7 +94,9 @@ main {
   .lead {
     width: 24rem;
     background: #0008 }
-    .lead > h1 { font-size: 4rem }
+    .lead > h1 {
+      font-size: 4rem;
+      line-height: 4rem }
     .lead-visual {
       width: 100vw;
       height: 100vh }
@@ -103,6 +106,7 @@ main {
       h1 {
         font-size: 2rem;
         font-weight: normal }
+      :not(.lead) > h1 { line-height: 2.45rem }
         article h1 > span {
           color: #fff0;
           font-weight: bold }
@@ -118,6 +122,7 @@ main {
       width: calc(35vw - 2rem) }
       .hidden { color: #ffa09b }
       .hidden.display { cursor: pointer }
+  svg.unloaded { display: none }
 @media (max-width: 78rem) {
   .tagline, article > span { left: 3rem }
   .lead.tagline {
@@ -185,7 +190,9 @@ main {
     left: 2rem;
     bottom: 2rem;
     width: 12rem }
-  .lead > h1 { font-size: 2rem }
+  .lead > h1 {
+    font-size: 2rem;
+    line-height: 2rem }
   article > span {
     font-size: large;
     top: 8.5rem;
@@ -193,7 +200,9 @@ main {
   .tagline {
     top: 8.5rem;
     left: calc(5vh + 1rem) }
-    h1 { font-size: large }
+    :not(.lead) > h1 {
+      font-size: large;
+      line-height: 1.2rem }
   .rule { left: .5rem }
   .copy {
     top: 13rem;

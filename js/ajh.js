@@ -125,27 +125,33 @@ let machine = new $.Machine({
 
 $.addEvents({
   "": {
-    load: function () {
+    load () {
       machine.emit('scroll', window.scrollY);
       machine.emit('resize', window.innerHeight, window.innerWidth);
+      new IntersectionObserver(entries =>
+        entries.forEach(entry => $('.lead-visual')[0].classList[entry.isIntersecting ? 'remove' : 'add']('unloaded'))
+      ).observe($('#lead')[0]);
       fetch('https://diarie.herokuapp.com/ping', { mode: 'no-cors'} )
     },
-    scroll: function (e) {
+    scroll (e) {
       e.stopPropagation();
       machine.emit('scroll', window.scrollY)
     },
-    resize: function (e) {
+    resize (e) {
       e.stopPropagation();
       machine.emit('resize', window.innerHeight, window.innerWidth)
+    },
+    visibilitychange () {
+      $('.lead-visual')[0].classList.toggle('unloaded')
     }
   },
   ".name, nav > *": {
-    click: function () {
+    click () {
       document.getElementById(this.dataset.link).scrollIntoView()
     }
   },
   ".display": {
-    click: function () {
+    click () {
       this.remove();
       replaceLink($('.phone-number')[0], '0422 8' + '11 274', 'tel');
       replaceLink($('.email')[0], 'ajh@t' + 'uta.io', 'mailto');

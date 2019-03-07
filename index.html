@@ -17,11 +17,6 @@
       <div class="logo">
         <canvas class="logo-dynamic"></canvas>
         <div class="filter"></div>
-        <svg id="filters">
-          <filter id="glow">
-            <feColorMatrix in="SourceGraphic" type="matrix"	values="1 0 0 0 0.02, 0 1 0 0 0.02, 0 0 1 0 0.02, 0 0 0 1 0"/>
-          </filter>
-        </svg>
       </div>
       <h1 class="name" data-link="lead">Aidan Hamwood</h1>
     </header>
@@ -46,7 +41,7 @@
           <animate attributeName="stroke" attributeType="XML" values="#ff4136ff; #ff413600"
             calcMode="spline" keySplines="0 .5 .5 1" dur="5s" begin="3s" repeatCount="indefinite"/>
         </circle>
-        <use width="10" height="30" href="#arrow">
+        <use width="10" height="30" xlink:href="#arrow">
           <animateTransform attributeName="transform" attributeType="XML" type="rotate" additive="sum" repeatCount="indefinite"/>
           <animateTransform attributeName="transform" attributeType="XML" type="rotate" additive="sum"/>
         </use>
